@@ -37,11 +37,6 @@ class DataHandler
             if (isset($params['uid_page'])) {
                 $cacheTagsToFlush[] = 'tx_news_pid_' . $params['uid_page'];
             }
-
-            $cacheManager = GeneralUtility::makeInstance(CacheManager::class);
-            foreach ($cacheTagsToFlush as $cacheTag) {
-                $cacheManager->flushCachesInGroupByTag('pages', $cacheTag);
-            }
         }
     }
 
